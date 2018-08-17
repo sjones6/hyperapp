@@ -36,9 +36,7 @@ export function app(state, actions, view, container) {
   var globalState = clone(state)
   var wiredActions = wireStateToActions([], globalState, clone(actions))
 
-  scheduleRender()
-
-  return wiredActions
+  return [wiredActions, scheduleRender]
 
   function recycleElement(element) {
     return {
