@@ -75,7 +75,7 @@ export function app(state, actions, view, container) {
   function scheduleRender() {
     if (!skipRender) {
       skipRender = true
-      render()
+      setTimeout(render)
     }
   }
 
